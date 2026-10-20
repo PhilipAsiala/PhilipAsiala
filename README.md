@@ -4,6 +4,8 @@ Open-source researcher and architect building trusted, evidence-driven framework
 
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-Philip%20Asiala-ff69b4?logo=github)](https://github.com/sponsors/PhilipAsiala)
 
+Support my work.
+
 **MOEPA** (Metrology, Ontology, Epistemology, Praxeology, Axiology) is the architecture for that split. The ledger stores the business logic. The runtime evaluates it. A foundation model remains an assistant, not the authority that decides whether a commitment is valid.
 
 ```mermaid
