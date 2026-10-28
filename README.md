@@ -33,7 +33,7 @@ The thesis is the source of the argument. The other public repositories are the 
 
 ## What the ledger holds
 
-Apache Iceberg is the versioned, append-only record and the only system of record. The unit of storage is the MOEPA record: one triple with four envelopes — why believe it, how good it is now, what it may mean for people, what may be done with it — on the same row, as JSON-LD against a context the organization owns. A record is never updated in place; a change is a new row with the same identifier and a new fingerprint. A vector index, a graph database, and a policy engine are projections rebuilt from the ledger. A bare export of rows, without the envelopes and the policy bundle, is not the ledger.
+Apache Iceberg is the versioned, append-only record and the only system of record. The unit of storage is the MOEPA record: one triple with four envelopes — why believe it, how good it is now, what it may mean for people, what may be done with it — on the same row, as JSON-LD against a context the organization owns. A record is never updated in place; a change is a new row with the same identifier and a new fingerprint. The definitions the checks read earn their authority by curation: raw ingest is bronze, human-enriched work is silver, and only a recorded human promotion makes a definition gold, which is all the checks ever read. A vector index, a graph database, and a policy engine are projections rebuilt from the ledger. A bare export of rows, without the envelopes and the policy bundle, is not the ledger.
 
 Sovereignty, on this account, is the ability to recover that cognitive history on infrastructure the organization controls: the claims, the lineage of each admitted assertion, and the rules that governed commitment. Hosting the model is a deployment choice. The admission checks stay outside the model.
 
@@ -41,7 +41,7 @@ Sovereignty, on this account, is the ability to recover that cognitive history o
 
 [draft/thesis.md](https://github.com/PhilipAsiala/moepa-thesis/blob/main/draft/thesis.md) is the working prospectus. Benchmarks named there are proposed. They are not reported results.
 
-The reference implementation runs in two private repositories, one deployable unit per catalog capability, each with its own check. `moepa-lab` runs on hardware I own with local models and rents nothing. `moepa-lab-gcp` runs the same units on Google Cloud as services that scale to zero, with the catalog, the object store, the index, the model host, and the identity system all swapped for managed ones. The same checks pass on both: a denied request never reaches the model, the policy hash on a decision matches the bundle in force, every projection can be emptied and rebuilt from the ledger, and a unit can be replaced without touching the others. That the checks hold across two deployments that share no infrastructure is the evidence that the record, the gate, and the ledger are the architecture, and the rest is a deployment choice. What the checks prove is reported back into the architecture and the thesis as what the deployment does, not as benchmark results.
+The reference implementation is `moepa-lab`, a private repository with one deployable unit per catalog capability, each with its own check. It runs on hardware I own with local models and rents nothing. The checks assert that a denied request never reaches the model, that the policy hash on a decision matches the bundle in force, that every projection can be emptied and rebuilt from the ledger, and that a unit can be replaced without touching the others. These are checks on one deployment, not a comparison across several, so they show what this stack does and not that the architecture is independent of its host. What the checks prove is reported back into the architecture and the thesis as what the deployment does, not as benchmark results.
 
 ## Support this work
 
@@ -49,7 +49,7 @@ This is one person's research, done in the open, with the infrastructure paid fo
 
 1. **Read it and argue.** Open an issue on [moepa-thesis](https://github.com/PhilipAsiala/moepa-thesis/issues) where the argument is wrong, unclear, or already made better by someone I have not cited. A disagreement with a reference is worth more than a star.
 2. **Try the record.** Put one of your own assertions into the shape [moepa-profile](https://github.com/PhilipAsiala/moepa-profile) describes and tell me what the envelopes could not hold. That is how the profile gets corrected.
-3. **Sponsor the infrastructure.** [GitHub Sponsors](https://github.com/sponsors/PhilipAsiala) pays for the cloud deployment, the model tokens the checks spend, and the time to keep the reference stack running and its results reported back into the public canon.
+3. **Sponsor the infrastructure.** [GitHub Sponsors](https://github.com/sponsors/PhilipAsiala) pays for the hardware the reference stack runs on, the model tokens the checks spend, and the time to keep the stack running and its results reported back into the public canon.
 4. **Cite it.** If the ledger-as-strategy argument or the five-layer record is useful in your own work, cite the prospectus by repository and commit until there is a published version.
 5. **Star and watch** the canon repositories so changes to the argument reach you.
 
